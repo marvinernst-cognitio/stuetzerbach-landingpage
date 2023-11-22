@@ -48,7 +48,7 @@ export default async function Page() {
                 />
               </div>
 
-              <p
+              <div
                 className="mt-6 text-center  font-sans text-sm leading-loose text-white lg:mt-10 lg:text-left lg:text-base"
                 dangerouslySetInnerHTML={{ __html: data.subline }}
               />

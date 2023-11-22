@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Layout({
   title,
   subline,
-  category,
   desc,
   children,
 }: {

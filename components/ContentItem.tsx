@@ -3,31 +3,31 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function extractAndRemoveListItems(html: string) {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, "text/html");
-  const ulElements = doc.getElementsByTagName("ul");
-  const listItems: string[] = [];
+  // const parser = new DOMParser();
+  // const doc = parser.parseFromString(html, "text/html");
+  // const ulElements = doc.getElementsByTagName("ul");
+  // const listItems: string[] = [];
 
-  while (ulElements.length > 0) {
-    const ulElement = ulElements[0];
-    if (!ulElement) {
-      return null;
-    }
-    const liElements = ulElement?.getElementsByTagName("li");
-    if (liElements) {
-      for (let j = 0; j < liElements.length; j++) {
-        const el = liElements[j];
-        if (el) {
-          if (el.textContent) {
-            listItems.push(el.textContent);
-          }
-        }
-      }
-    }
-    ulElement.remove();
-  }
+  // while (ulElements.length > 0) {
+  //   const ulElement = ulElements[0];
+  //   if (!ulElement) {
+  //     return null;
+  //   }
+  //   const liElements = ulElement?.getElementsByTagName("li");
+  //   if (liElements) {
+  //     for (let j = 0; j < liElements.length; j++) {
+  //       const el = liElements[j];
+  //       if (el) {
+  //         if (el.textContent) {
+  //           listItems.push(el.textContent);
+  //         }
+  //       }
+  //     }
+  //   }
+  //   ulElement.remove();
+  // }
 
-  return { listItems, html: doc.body.outerHTML };
+  return { listItems: [], html };
 }
 
 export default function ContentItem({
@@ -70,7 +70,9 @@ export default function ContentItem({
               opacity: 1,
               transition: { delay: 0.15, duration: 0.751 },
             }}
-            className={`leading-loose ${light && "text-white"}`}
+            className={`leading-loose ${
+              light && "text-white"
+            } prose-li:list-outside prose-li:list-disc prose-ul:pl-4`}
             dangerouslySetInnerHTML={{ __html: newHtmlData.html }}
           />
         )}

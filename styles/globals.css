@@ -48,12 +48,6 @@ body {
 }
 
 
-li::before {
-  content: "•";
-  color: theme('colors.main.400');
-  display: inline-block; width: 1em;
-  margin-left: 0em;
-}
 
 
 .mapboxgl-popup-content {

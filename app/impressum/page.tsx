@@ -8,7 +8,6 @@ const fetchData = async () => {
 };
 
 export default async function Impressum() {
-  // const [data, setData] = useState<null | any>(null);
   const data = await fetchData();
 
   return (

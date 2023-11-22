@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* libre-franklin-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/libre-franklin-v13-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/libre-franklin-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/libre-franklin-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/libre-franklin-v13-latin-regular.svg#LibreFranklin') format('svg'); /* Legacy iOS */
+}
+/* libre-franklin-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/libre-franklin-v13-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/libre-franklin-v13-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/libre-franklin-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/libre-franklin-v13-latin-700.svg#LibreFranklin') format('svg'); /* Legacy iOS */
+}
+/* libre-franklin-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight:600;
+  src: url('/fonts/libre-franklin-v13-latin-500.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/libre-franklin-v13-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/libre-franklin-v13-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/libre-franklin-v13-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/libre-franklin-v13-latin-500.svg#LibreFranklin') format('svg'); /* Legacy iOS */
+}
+body {
+  color: #292929;
+  font-family: "Libre Franklin",Arial,sans-serif;
+  overflow-x: hidden;
+}
+
+
+li::before {
+  content: "•";
+  color: theme('colors.main.400');
+  display: inline-block; width: 1em;
+  margin-left: 0em;
+}
+
+
+.mapboxgl-popup-content {
+  box-shadow: none;
+}

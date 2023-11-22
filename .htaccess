@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^station/(.*)$ / [R=301,L]

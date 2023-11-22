@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wene",
+      "sha256_cert_fingerprints": [
+        "B5:22:1A:9E:8C:9B:59:2A:53:36:DD:A6:10:90:F5:1A:B7:10:9B:2D:60:99:CC:5A:C4:B7:9D:18:01:EA:ED:A5"
+      ]
+    }
+  }
+]

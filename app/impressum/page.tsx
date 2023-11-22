@@ -1,8 +1,4 @@
-import React from "react";
-
-import { useQuery } from "react-query";
-import Layout from "../components/Layout";
-import Loader from "../components/Loader";
+import Link from "next/link";
 
 const fetchData = async () => {
   const url = `https://stuetzerbach.cognitio.de/api/collections/get/Page?token=6ccda160ab7f2a091ef159761bfc1b&filter[title_slug]=impressum`;
@@ -11,16 +7,27 @@ const fetchData = async () => {
   return data.entries[0];
 };
 
-export default function Impressum(props) {
+export default async function Impressum() {
   // const [data, setData] = useState<null | any>(null);
-  const { data } = useQuery("impressum", fetchData, {
-    initialData: props.data,
-  });
-  if (!data) {
-    return <Loader />;
-  }
+  const data = await fetchData();
+
   return (
-    <Layout title={data.title} subline={data.subline}>
+    <>
+      <header className={`header relative flex  bg-cover py-8  bg-main `}>
+        <div className=" left-0 top-0  flex w-full p-8 ">
+          <Link
+            href="/"
+            className=" flex justify-center flex-row items-center gap-4"
+          >
+            <img src="/logo_bildmarke.png" alt="" className="h-24" />
+            <img src="/logo.svg" alt="" className="h-16" />
+          </Link>
+        </div>
+
+        <div
+          className={`absolute bottom-0 z-10 h-56 max-h-[20vh] w-screen bg-cover bg-repeat-x mg-main`}
+        ></div>
+      </header>
       <main className="container mx-auto flex flex-col items-center justify-center p-4 pb-40 pt-32">
         <div className="lg:w-2/3">
           <h1 className="gap-3  font-main text-2xl text-gray-500  lg:text-5xl">
@@ -42,15 +49,6 @@ export default function Impressum(props) {
           })}
         </div>
       </main>
-    </Layout>
+    </>
   );
 }
-
-export const getStaticProps = async () => {
-  const data = await fetchData();
-  return {
-    props: {
-      data,
-    },
-  };
-};
